@@ -1,0 +1,76 @@
+<html><head><base href="https://websim.creation.engine/arabic-signup-success/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل ناجح</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  .container {
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .loading {
+    display: none;
+  }
+  .success-message {
+    display: none;
+    color: #28a745;
+  }
+  .success-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  .sub-message {
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="loading" id="loading">
+      <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="25" cy="25" r="20" stroke="#007bff" stroke-width="5" fill="none">
+          <animate attributeName="stroke-dasharray" dur="1.5s" repeatCount="indefinite"
+                   values="1, 125;125, 125;125, 1"/>
+          <animate attributeName="stroke-dashoffset" dur="1.5s" repeatCount="indefinite"
+                   values="0;-125;-250"/>
+        </circle>
+      </svg>
+    </div>
+    <div class="success-message" id="success-message">
+      <svg class="success-icon" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="25" cy="25" r="23" fill="#28a745"/>
+        <path d="M38 15L22 33l-10-8" stroke="white" stroke-width="3" fill="none"/>
+      </svg>
+      <h2>لقد تم تسجيلك بنجاح</h2>
+      <p class="sub-message">ستصلك 35 جيغا انترنت في غضون لحظات</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loading = document.getElementById('loading');
+      const successMessage = document.getElementById('success-message');
+
+      loading.style.display = 'block';
+
+      setTimeout(function() {
+        loading.style.display = 'none';
+        successMessage.style.display = 'block';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
